@@ -1,0 +1,14 @@
+<% provide(:title, "Войти") %>
+<div id = "upperwr"><div id ="wrapper">
+    <%= form_for @ad, url: adlog_url do |f|%>
+  <div id="form_title">
+    <h1><span class="ec ec-calling"></span> Войти </h1> 
+  </div>
+  <br>
+    <%= f.email_field :email, placeholder: "Email" %><br>
+
+    <%= f.password_field :password, placeholder: "Пароль" %><br> 
+  <%= f.submit "Войти"%> 
+<% end %>
+  </div>
+</div>

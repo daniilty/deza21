@@ -1,0 +1,14 @@
+<% provide(:title, "Заказать консультацию") %>
+<div id = "upperwr"><div id ="wrapper">
+    <%= form_for @order, url: get_consult_url do |f|%>
+  <div id="form_title">
+    <h1><span class="ec ec-selfie"></span> Оставить заявку</h1> 
+  </div>
+  <br>
+    <%= f.email_field :email, placeholder: "Email" %><br>
+    <%= f.text_field :number, placeholder: "Номер телефона" %><br> 
+    <%= f.text_field :name, placeholder: "Ваше полное имя" %><br> 
+  <%= f.submit "Отправить"%> 
+<% end %>
+  </div>
+</div>

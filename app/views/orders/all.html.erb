@@ -1,0 +1,16 @@
+<% provide(:title, "Заказы") %>
+<div class="upperord">
+<% if @orders.any? %>
+  <div class="orders">
+    <% @orders.each do |order| %>
+      <div class= "order">
+        <h1><span class="ec ec-clipboard"></span> Заявка №<%= order.id%></h1>
+        <h3>Имя:</h3><p><%= order.name %></p>
+        <h3>email:</h3><p><%= order.email %></p>
+        <h3>Телефон:</h3><p><%= order.number %><br>
+      <a data-method="delete" href="/orders/delete/<%= order.id %>" class='cta'>Выполнено</a>
+      </div>
+  <% end %>
+  </div>
+<% end %>
+</div>
