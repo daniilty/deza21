@@ -13,6 +13,7 @@ class HomeController < ApplicationController
   end
 
   def ourclients
+    @clients = Client.all
   end
   def create_order
     @order = Order.new(order_params)

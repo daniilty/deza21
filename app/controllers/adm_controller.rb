@@ -2,6 +2,9 @@ class AdmController < ApplicationController
   def adlog
     @ad = Admin.new
   end
+  def delete
+	session[:user_id] = nil
+  end
   def create_session
     @ad = Admin.find_by(email: params[:admin][:email].downcase)
     if @ad && @ad.authenticate(params[:admin][:password])

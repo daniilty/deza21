@@ -10,8 +10,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <header class="header">
-      <a href="<%=root_url%>" class="logo"><%= image_tag("rosp.png")%></a>
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <a href="<%=root_url%>" class="logo"><%= image_tag("dezprof21.png")%></a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
   <ul class="menu">
     <% if is_logged_in? %>
@@ -26,6 +26,9 @@
 </header>
   </head>
   <body>
+    <% if is_logged_in? %>
+	<%= link_to (image_tag "exit.svg"), logout_path, method: :delete, class: "float" %>
+    <% end %>
     <% if notice %>
       <h2 style="text-align: center; margin-top: 50px; font-family: 'Noah';"><span class="ec ec-bell"></span> <%= notice %> </h2>
     <% end %>

@@ -1,0 +1,10 @@
+<div id="upperwr">
+<div id="wrapper">
+<%= form_for @client, url: clients_new_url do |f| %>
+  <%= f.text_field :name, placeholder: 'Название организации' %>
+  <%= f.hidden_field :image, value: @client.cached_image_data %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>
+</div>
+</div>

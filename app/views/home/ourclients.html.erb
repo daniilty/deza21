@@ -1,6 +1,20 @@
 <% provide(:title, "Наши клиенты") %>
+<% if is_logged_in? %>
+  <%= link_to image_tag("add.svg"), clients_new_url, class: "float1" %>
+<% end %>
 <div class="clientsup">
   <div class="clients">
+  <% if @clients.any? %>
+  	<% @clients.each do |client| %>
+		<div class="client">
+			<%= image_tag client.image_url %>
+			<div class="description">
+			<h3><%= client.name %></h3>
+			<%= link_to 'больше не клиент', '/destroy_client/' + client.id.to_s, method: :delete, class: 'blog-post_cta'  %>
+			</div>
+		</div>
+	<% end %>
+  <% end %>
     <div class = "client">
       <%= image_tag("adm.jpg") %>
       <div class = "description">

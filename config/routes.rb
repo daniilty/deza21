@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  delete 'logout', to: 'adm#delete'
+  delete 'destroy_client/:id', to: 'clients#delete'
+  get 'clients/new'
+  post 'clients/new', to: 'clients#create'
   get 'u1', to: 'documenti#u1'
   get 'u2', to: 'documenti#u2'
   get 'u3', to: 'documenti#u3'
