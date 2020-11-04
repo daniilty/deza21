@@ -10,7 +10,9 @@
 			<%= image_tag client.image_url %>
 			<div class="description">
 			<h3><%= client.name %></h3>
+			<% if is_logged_in? %>
 			<%= link_to 'больше не клиент', '/destroy_client/' + client.id.to_s, method: :delete, class: 'blog-post_cta'  %>
+			<% end %>
 			</div>
 		</div>
 	<% end %>
