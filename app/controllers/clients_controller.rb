@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
   def create
 	@client = Client.create(client_params)
 	if @client.save
-		redirect_to root_url
+		redirect_to our_clients_url
 	end
   end
   def delete

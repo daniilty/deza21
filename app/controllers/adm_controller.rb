@@ -4,6 +4,7 @@ class AdmController < ApplicationController
   end
   def delete
 	session[:user_id] = nil
+        redirect_to root_url
   end
   def create_session
     @ad = Admin.find_by(email: params[:admin][:email].downcase)
