@@ -2,7 +2,7 @@
 
 class DocumentiController < ApplicationController
   def index; end
-  
+
   def bo
     @documents = Document.where(tip: 'Бухгалтерская отчетность')
   end
