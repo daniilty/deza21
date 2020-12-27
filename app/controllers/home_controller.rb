@@ -1,12 +1,11 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
-  def index
-  end
+  def index; end
 
-  def about
-  end
+  def about; end
 
-  def contacts
-  end
+  def contacts; end
 
   def getacall
     @order = Order.new
@@ -15,15 +14,18 @@ class HomeController < ApplicationController
   def ourclients
     @clients = Client.all
   end
+
   def create_order
     @order = Order.new(order_params)
-    if @order.save 
-      redirect_to home_url, notice: "С вами свяжутся в ближайшее время"
+    if @order.save
+      redirect_to home_url, notice: 'С вами свяжутся в ближайшее время'
     else
-      redirect_to get_consult_url, notice: "Пожалуйста, заполните все поля"
+      redirect_to get_consult_url, notice: 'Пожалуйста, заполните все поля'
     end
   end
+
   private
+
   def order_params
     params.require(:order).permit(:name, :number, :email)
   end

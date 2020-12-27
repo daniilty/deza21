@@ -1,4 +1,9 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  get 'doc/create'
+  post 'doc/new'
+  delete 'doc/:id', to: 'doc#delete'
   delete 'logout', to: 'adm#delete'
   delete 'destroy_client/:id', to: 'clients#delete'
   get 'clients/new'
@@ -23,6 +28,7 @@ Rails.application.routes.draw do
   get 's2', to: 'documenti#s2'
   get 's3', to: 'documenti#s3'
   get 'documenti/index'
+  get 'documenti/bo'
   get 'documenti/n'
   get 'documenti/u'
   get 'documenti/s'

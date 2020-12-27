@@ -1,4 +1,5 @@
+# frozen_string_literal: true
+
 class DocumentsController < ApplicationController
-  def all
-  end
+  def all; end
 end

@@ -1,3 +1,6 @@
+<% if is_logged_in? %>
+  <%= link_to image_tag("add.svg"), doc_create_url, class: "float1" %>
+<% end %>
 <% provide(:title, "Документы") %>
 <div class="card">
   <div class="blogpost">
@@ -10,7 +13,8 @@
     </div>
     <div class ="blog-post_text">
       <div class="blog-post_links">
-      <span class="ec ec-newspaper-roll"></span> <a href="<%= documenti_n_url %>">Нормативные документы</a><br><br>
+      <span class="ec ec-newspaper-roll"></span> <a href="<%= documenti_bo_url %>">Бухгалтерская отчетность</a><br><br>
+      <span class="ec ec-newspaper-roll"></span> <a href="<%= documenti_n_url %>">Антикоррупция</a><br><br>
       <span class="ec ec-newspaper-roll"></span> <a href="<%= documenti_u_url %>">Учредительные документы</a><br><br>
       <span class="ec ec-newspaper-roll"></span> <a href="<%= documenti_s_url %>">Специальная оценка условий труда</a><br><br>
       </div>

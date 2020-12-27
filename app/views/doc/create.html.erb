@@ -1,0 +1,12 @@
+<div id="upperwr">
+<div id="wrapper">
+<%= form_for @document, url: doc_new_url do |f| %>
+  <h2> Выберите тип документа </h2>
+  <%= f.select(:tip, ['Бухгалтерская отчетность', 'Учредительные документы', 'Антикоррупция', 'СОУТ'], { :multiple => false, :size => 4 }) %>
+  <%= f.text_field :title, placeholder: 'Название документа' %>
+  <%= f.hidden_field :file, value: @document.cached_file_data %>
+  <%= f.file_field :file %>
+  <%= f.submit 'Создать документ' %>
+<% end %>
+</div>
+</div>

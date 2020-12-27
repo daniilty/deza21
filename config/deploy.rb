@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+lock '~> 3.14.1'
 
+set :application, 'dezi21'
+set :repo_url, 'https://github.com/daniilty/deza21.git'
+set :branch, 'main'
+set :deploy_to, '/home/deploy/dezi21'
 
-set :application, "dezi21"
-    set :repo_url, "https://github.com/daniilty/deza21.git"
-    set :branch, "main"
-    set :deploy_to, '/home/deploy/dezi21'
-
-    append :linked_files, "config/database.yml", "config/secrets.yml"
-    append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system',
+       'public/uploads'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

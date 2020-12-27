@@ -1,0 +1,10 @@
+<% provide(:title, "Бухгалтерская отчетность") %>
+<div class="upperdoci">
+<div class="doci">
+  <h1><span class="ec ec-newspaper-roll"></span> Бухгалтерская отчетность</h1>
+<% @documents.each do |doc| %>
+  <span class="ec ec-page-facing-up"></span> 
+  <%= link_to doc.title, doc.file_url %></br></br>
+<% end %>
+</div>
+</div>
