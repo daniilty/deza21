@@ -1,10 +1,10 @@
 <% provide(:title, "Специальная оценка условий труда") %>
+<div class="upperdoci">
 <div class="doci">
   <h1><span class="ec ec-newspaper-roll"></span> Специальная оценка условий труда</h1>
+<% @documents.each do |doc| %>
   <span class="ec ec-page-facing-up"></span> 
-  <a target="_blank" href="<%= s1_url %>">Декларация соответствия условий труда</a><br><br>
-  <span class="ec ec-page-facing-up"></span> 
-  <a target="_blank" href="<%= s2_url %>">Сводная ведомость результатов проведения СОУТ</a><br><br>
-  <span class="ec ec-page-facing-up"></span> 
-  <a target="_blank" href="<%= s3_url %>">Перечень рабочих мест, на которых проводилась СОУТ</a><br><br>
+  <%= link_to doc.title, doc.file_url %></br></br>
+<% end %>
+</div>
 </div>
